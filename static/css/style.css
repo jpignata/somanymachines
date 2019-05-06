@@ -1,0 +1,51 @@
+@media (min-width: 768px) {
+	header {
+		width: 680px;
+		font-size: 60px;
+	}
+
+	article {
+		width: 680px;
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 768px) {
+	header {
+		font-size: 30px;
+	}
+}
+
+body {
+	font-family: 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	margin: 0 auto;
+	font-weight: 800;
+  letter-spacing: -2px;
+}
+
+header a {
+	color: #444;
+}
+
+article {
+  color: #444;
+	margin: 0 auto;
+	line-height: 1.5em;
+}
+
+article h1 {
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+article time {
+	font-weight: 200;
+	font-size: 0.9em;
+}
