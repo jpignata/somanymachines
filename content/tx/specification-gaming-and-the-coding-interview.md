@@ -10,17 +10,16 @@ test by an agent to satisfy it without actually completing the intended
 objective. Processes evolve, side-stepping their creators’ motivations, and
 instead work to maximize their performance in the environment in which they’ve
 found themselves operating. This is an emerging stream of study in artificial
-intelligence where [recent papers][1] outline examples of digital evolution in
-the wild. Many of these examples are algorithms exhibiting surprising behaviors
-by either coming up with novel solutions or abusing latent bugs in the scenario
-in which it was being trained to maximize the score from a fitness function.  In
-many of these cases the algorithm compromises the intended goal. Like Skynet
-from the _The Terminator_ films destroying humanity to continue its mission of
-"safeguarding the world" these processes precisely follow the specification of
-the test.
+intelligence research where [recent papers][1] outline examples of digital
+evolution in the wild. Many of these examples are algorithms exhibiting
+surprising behaviors by either coming up with novel solutions or abusing latent
+bugs in the scenario in which it was being trained to maximize the score from a
+fitness function.  In many of these cases the algorithm compromises the intended
+goal. Like Skynet from the _The Terminator_ films destroying humanity to
+continue its mission of "safeguarding the world" these processes precisely
+follow the specification of the test.
 
 Take another example:
-
 
 <blockquote class="twitter-tweet" data-cards="hidden"
 data-conversation="none"><p lang="en" dir="ltr">I hooked a neural network up to
