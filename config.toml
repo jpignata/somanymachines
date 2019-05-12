@@ -1,3 +1,8 @@
 baseURL = "https://somanymachines.com/"
 languageCode = "en-us"
 title = "so many machines"
+
+[taxonomies]
+  tag = ""
+  group = ""
+  category = ""

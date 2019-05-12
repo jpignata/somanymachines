@@ -3,21 +3,22 @@ title: "Specification Gaming and the Coding Interview"
 date: 2019-05-06T10:00:00-04:00
 draft: false
 type: post
+dek: "Are LeetCode-style interviews helping companies hire the right
+candidates or has the specification drifted from the goal?"
 ---
 
 [Specification gaming][0] is the unexpected exploitation of the conditions of a
 test by an agent to satisfy it without actually completing the intended
 objective. Processes evolve, side-stepping their creators’ motivations, and
 instead work to maximize their performance in the environment in which they’ve
-found themselves operating. [_The Surprising Creativity of Digital Evolution: A
-Collection of Anecdotes from the Evolutionary Computation and Artificial Life
-Research Communities_][1] outlines examples of digital evolution in the wild
-showing algorithms exhibiting surprising behaviors by either coming up with
-novel solutions or abusing latent bugs in the scenario in which it was being
-trained to maximize a score from a fitness function. In many of these cases the
-algorithm compromises the intended goal, but like Skynet from the _The
-Terminator_ films destroying humanity to continue its mission of "safeguarding
-the world", they precisely follow the specification.
+found themselves operating. [_The Surprising Creativity of Digital
+Evolution_][1] outlines examples in the wild of algorithms exhibiting surprising
+behaviors by either coming up with novel solutions or abusing latent bugs in the
+scenario in which it was being trained to maximize a score from a fitness
+function. In many of these cases the algorithm compromises the intended goal,
+but like Skynet in _The Terminator_ films destroying humanity to continue
+its mission of "safeguarding the world," they precisely follow the
+specification.
 
 <blockquote class="twitter-tweet" data-cards="hidden"
 data-conversation="none"><p lang="en" dir="ltr">I hooked a neural network up to
@@ -30,8 +31,8 @@ Smingleigh (@Smingleigh) <a
 href="https://twitter.com/Smingleigh/status/1060325665671692288?ref_src=twsrc%5Etfw">November
 8, 2018</a></blockquote>
 
-Poor robot. He just wanted to do well and please his creator and didn’t try to
-destroy humanity even once. What a good boy.
+Poor robot. It just wanted to do well and please its creator and didn’t try to
+destroy humanity even once.
 
 These unexpected outcomes are the result of emergent behavior from unsupervised
 optimization by actors in a complex system training to maximize positive
@@ -39,21 +40,21 @@ feedback whose source had either drifted from or had not been seamlessly aligned
 with the intended goal. In effect, the Roomba's operator had created conditions
 in the training scenario that unintentionally asked it to drive backwards.
 
-_Meanwhile_, at the same companies generating hype about this new world of artificial
-intelligence, engineers work to help their teams build their ranks through
-coding interviews. The coding interview is a practical examination of a
+_Meanwhile_, at the same companies generating hype about the limitless promise
+of artificial intelligence, engineers work to help their teams build their ranks
+through coding interviews. The coding interview is a practical examination of a
 candidate’s ability to write software by posing a problem to be solved
 extemperaneously. These interviews are a rite of passage for software developers
 and an obsessed-over hurdle: the only thing between you and that dream job is a
 blank whiteboard, a smiling-albeit-standoff-ish bespectacled man in khakis, and
 a binary tree that, you’re told, needs to be inverted. Something akin to the
 intern qualification exercise in _The Social Network_, sans the hooting
-audience, problematic binge drinking, and Sorkin dialog.
+audience, problematic binge drinking, and Sorkin dialogue.
 
-The current #1 bestseller on Amazon.com in the [computer science category][2]
-is [Cracking the Coding Interview][3]. Widely referred to by its initials by
-college students and job seekers of all ages, CTCI promises to teach you
-everything you need to know to perform well in technical interviews at
+As of this writing, the #1 bestseller on Amazon.com in the [computer science
+category][2] is [Cracking the Coding Interview][3]. Widely referred to by its
+initials by college students and job seekers of all ages, CTCI promises to teach
+you everything you need to know to perform well in technical interviews at
 companies like Google, Facebook, et al, via CliffsNotes on computer science
 topics and 189 example problems and their solutions. It’s a prominent example of
 a crop of books and startups that have been created to service a market of
