@@ -55,12 +55,11 @@ article {
 
 article h1 {
 	font-weight: 500;
-	margin-bottom: 10px;
+	margin: 0px;
 }
 
 article time {
 	font-weight: 200;
-	font-size: 0.9em;
 }
 
 .headline {
@@ -70,7 +69,6 @@ article time {
 
 .headline time {
   font-weight: 300;
-  font-size: 12px;
 }
 
 footer {
@@ -79,6 +77,6 @@ footer {
 
 .dek {
   font-size: 14px;
-  margin: 2px 0 0 0;
+  margin: 2px 0 10px 0;
   line-height: 22px;
 }

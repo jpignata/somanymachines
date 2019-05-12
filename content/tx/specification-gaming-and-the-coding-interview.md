@@ -44,7 +44,7 @@ _Meanwhile_, at the same companies generating hype about the limitless promise
 of artificial intelligence, engineers work to help their teams build their ranks
 through coding interviews. The coding interview is a practical examination of a
 candidate’s ability to write software by posing a problem to be solved
-extemperaneously. These interviews are a rite of passage for software developers
+extemporaneously. These interviews are a rite of passage for software developers
 and an obsessed-over hurdle: the only thing between you and that dream job is a
 blank whiteboard, a smiling-albeit-standoff-ish bespectacled man in khakis, and
 a binary tree that, you’re told, needs to be inverted. Something akin to the
