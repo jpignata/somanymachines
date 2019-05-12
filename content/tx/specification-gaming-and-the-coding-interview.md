@@ -9,17 +9,15 @@ type: post
 test by an agent to satisfy it without actually completing the intended
 objective. Processes evolve, side-stepping their creators’ motivations, and
 instead work to maximize their performance in the environment in which they’ve
-found themselves operating. This is an emerging stream of study in artificial
-intelligence research where [recent papers][1] outline examples of digital
-evolution in the wild. Many of these examples are algorithms exhibiting
-surprising behaviors by either coming up with novel solutions or abusing latent
-bugs in the scenario in which it was being trained to maximize the score from a
-fitness function.  In many of these cases the algorithm compromises the intended
-goal. Like Skynet from the _The Terminator_ films destroying humanity to
-continue its mission of "safeguarding the world" these processes precisely
-follow the specification of the test.
-
-Take another example:
+found themselves operating. [_The Surprising Creativity of Digital Evolution: A
+Collection of Anecdotes from the Evolutionary Computation and Artificial Life
+Research Communities_][1] outlines examples of digital evolution in the wild
+showing algorithms exhibiting surprising behaviors by either coming up with
+novel solutions or abusing latent bugs in the scenario in which it was being
+trained to maximize a score from a fitness function. In many of these cases the
+algorithm compromises the intended goal, but like Skynet from the _The
+Terminator_ films destroying humanity to continue its mission of "safeguarding
+the world", they precisely follow the specification.
 
 <blockquote class="twitter-tweet" data-cards="hidden"
 data-conversation="none"><p lang="en" dir="ltr">I hooked a neural network up to
@@ -39,9 +37,9 @@ These unexpected outcomes are the result of emergent behavior from unsupervised
 optimization by actors in a complex system training to maximize positive
 feedback whose source had either drifted from or had not been seamlessly aligned
 with the intended goal. In effect, the Roomba's operator had created conditions
-in the training scenario that asked it to drive backwards.
+in the training scenario that unintentionally asked it to drive backwards.
 
-_Meanwhile_, at the same companies delivering this new world of artificial
+_Meanwhile_, at the same companies generating hype about this new world of artificial
 intelligence, engineers work to help their teams build their ranks through
 coding interviews. The coding interview is a practical examination of a
 candidate’s ability to write software by posing a problem to be solved
@@ -63,26 +61,26 @@ software engineering hopefuls eager to cram by practicing questions similar to
 those they can expect on an interview.
 
 What sort of questions are we talking about? Let’s look at an example. Say
-you’re given a list of numbers like: `[1, 9, 1, 9, 2]` and you're asked to find
+you’re given a list of numbers `[1, 9, 1, 9, 2]` and you're asked to find
 the number which is in the list only once. Before thinking about it, you'd
 likely scan this sequence and find that the only number without a duplicate is
 2. Splendid. Now, how do you tell a computer to do the same thing?
 
-You could tell the computer to do it like you did it mentally. For each number,
-loop through the other numbers, count the number of occurrences, and return the
-number that only occurs once. This will work quite handily for lists like the
-one above. With a list of 5 items, this might result in 25 operations of reading
-the list. Done, right? Well, if I gave your computer (or you) a list of 50,000
-numbers, this approach is no longer viable. You can’t physically go through
-50,000 items for every item looking for duplicates, and your computer will have
-to run 2.5 billion operations in order to produce a result for you. This is a
-brute force approach to solving the problem.
+You could tell the computer to do it the same way you might have done it
+mentally. For each number, loop through the other numbers, count the number of
+occurrences, and return the number that only occurs once. This will work quite
+handily for lists like the one above. With a list of 5 items, this might result
+in 25 operations of reading the list. Done, right? Well, if I gave you a list of
+50,000 numbers, this approach is no longer viable. You can’t physically go
+through 50,000 items for every item looking for duplicates, and your computer
+will have to run 2.5 billion operations in order to produce a result for you.
+This is a brute force approach to solving the problem.
 
-Fear not. Better solutions to this problem exist. For example, it can be solved
-by taking advantage of bit manipulation and the exclusive-or operation.
-Any number XOR zero will equal the original number, and any number XOR itself
-will equal zero. Thus, if you start with zero, iterate through each number in
-the list, and XOR them against that zero, you will be left with the number
+Fear not. Better, less obvious solutions to this problem exist. One approach is
+to take advantage of bit manipulation and the exclusive-or operation.  Any
+number XOR zero will equal the original number, and any number XOR itself will
+equal zero. Thus, if you start with zero, iterate through each number in the
+list, and XOR them all against that number, you will be left with the number
 without a duplicate. For this solution, your computer only evaluates each number
 in the list once and stores only the running tally in memory. Linear time,
 constant space. Cut the check.
@@ -90,12 +88,14 @@ constant space. Cut the check.
 That’s an easy, contrived example. [Leetcode][4] is a website that provides a
 thousand such questions and an interactive environment to test your prowess
 against a battery of test cases and the time and space efficiency of other
-users’ solutions. The [question on Leetcode currently holding the lowest success
-rate][5] asks a programmer to validate whether a given string (say, `12` or
-`+54.9e33` or `bicycle`) can be interpreted as a decimal number. Provided
-solutions in the discussion forum for this question range from using
-Deterministic Finite Automata to parse the string, to regular expressions
-gymnastics, to “`return !isNaN(parseFloat(s))` lol.”
+users’ solutions. It touts itself as a platform to help people enhance their
+skills in order to prepare for technical interviews. The [question on Leetcode
+currently holding the lowest success rate][5] asks a programmer to validate
+whether a given string (such as `12` or `-54.9e33` or `bicycle`) can be
+interpreted as a decimal number. Provided solutions in the discussion forum for
+this question range from using Deterministic Finite Automata to parse the
+string, to regular expressions gymnastics, to “`return !isNaN(parseFloat(s))`
+lol.”
 
 The internet gives us a window into this subculture of career hacking and
 coding interview preparation. On forums like [/r/cscareerquestions][6], job
@@ -118,15 +118,24 @@ themselves on relentless optimization having their own interview processes
 relentlessly optimized by job candidates. These filters are, at best,
 identifying the right, motivated candidates, or at worst, creating a generation
 of mercenaries with a mentality that to achieve a high paying job in
-technology one must learn the test and game the specification.  Despite
-widespread techno-optimism and a boom-time job market, the [Bureau of Labor
-Statistics projects computer programming to contract by about 7%][7] by 2026 due
-to the portability of these jobs to locales with less expensive labor pools, and
-an inevitable economic contraction or recession looms.
+technology one must learn the test and game the specification.
 
-In a tighter job market will companies continue to rely on the coding
-interview, or will we find we’ve been unintentionally asking people to drive
-backwards?
+The top all time post on [/r/cscareerquestions][6] is titled "[Accidentally
+destroyed production database on first day of a job, and was told to
+leave...][7]" It recounts the experience of a new graduate following an
+environment setup document that included production database credentials which
+they used to run a series of commands starting with `DROP DATABASE`. The veneer
+of the coding interview suggests to candidates that hiring managers are wisened
+monks who spent a lifetime in study for this moment to test your mettle. It
+belies the reality: that same hiring manager is going to give you a Word
+document with production database credentials on your first day and no amount of
+practicing dynamic programming questions will prepare you for that.
+
+Trends in hiring move slowly and while anxiety and backlash over the coding
+interview continues to build, there isn't much in the way of data to show if
+these interviews are effective or otherwise. For professional developers some
+navel gazing and soul searching is warranted: is this tool identifying the right
+candidates or are we unintentionally asking people to drive backwards?
 
 [0]: https://vkrakovna.wordpress.com/2018/04/02/specification-gaming-examples-in-ai/
 [1]: https://arxiv.org/pdf/1803.03453.pdf?
@@ -135,4 +144,4 @@ backwards?
 [4]: https://leetcode.com
 [5]: https://leetcode.com/problems/valid-number/
 [6]: https://reddit.com/r/cscareerquestions
-[7]: https://www.bls.gov/ooh/computer-and-information-technology/computer-programmers.htm
+[7]: https://www.reddit.com/r/cscareerquestions/comments/6ez8ag/accidentally_destroyed_production_database_on/
