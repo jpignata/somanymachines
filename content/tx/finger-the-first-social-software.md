@@ -160,4 +160,4 @@ Want to tinker? Download and play with the code example above in my [twinger][12
 [^0]: As in, [let your fingers do the walking][4] or pointing.
 [^1]: Summarized from [an alt.forklore.computers post from 1990.](https://groups.google.com/forum/#!msg/alt.folklore.computers/IdFAN6HPw3k/Ci5BfN8i26AJ)
 [^2]: He appears to be quite a character. To wit, he maintains an exhaustive [bucket list][5] of what he intends to do before he dies in 2043, which he plans to be at the circumstance of a gunshot wound by a jealous husband.
-[^3]: Regretably, most implementions don't even support multi-byte characters, so don't expect to see any non-ASCII characters or tears-of-joy emoji and the like. See **BUGS** in FINGER(1) on BSD-like systems such as Darwin.
+[^3]: Regrettably, most implementions don't even support multi-byte characters, so don't expect to see any non-ASCII characters or tears-of-joy emoji and the like. See **BUGS** in FINGER(1) on BSD-like systems such as Darwin.
