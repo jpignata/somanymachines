@@ -1,5 +1,6 @@
 @media (min-width: 768px) {
   header {
+    margin-top: 40px;
     width: 680px;
     font-size: 32px;
   }
@@ -12,10 +13,11 @@
 
 @media (max-width: 768px) {
   body {
-    padding: 0;
+    padding: 0 10px;
   }
 
   header {
+    margin-top: 20px;
     width: 100%;
     font-size: 20px;
   }
@@ -39,7 +41,8 @@ a, a:visited {
 }
 
 header {
-	margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Orbitron', sans-serif;
 }
 
