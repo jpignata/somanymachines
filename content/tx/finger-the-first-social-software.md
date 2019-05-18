@@ -9,11 +9,11 @@ environment still ships with your operating system. Let's connect 1972 to 2019."
 In the early seventies at the [Stanford Artificial Intelligence Lab][0], [Les
 Earnest][1] built a small utility to help people with disparate schedules find
 each other for both professional and social purposes. Prior to his program
-`finger`[^0], users would run a version of `who` to figure out what users were
+`finger`[^13], users would run a version of `who` to figure out what users were
 logged in and what physical terminal they were using by mentally mapping cryptic
 user IDs to people and line numbers to physical terminals in the lab. Building
 on `who`, Les wrote finger to provide a richer display of this information by
-mapping user IDs and ttys into peoples' names and physical places.[^1]
+mapping user IDs and ttys into peoples' names and physical places.[^14]
 
 Somewhere down the road, `finger` became a [service][3] which allowed foreign
 systems to query user status across a network allowing users to peek in on one
@@ -36,7 +36,7 @@ you attended college during this time `finger` was the social network. Amongst
 his inventions Les Earnest lists:
 
 >  Social networking and blogging service (FINGER, 1972), which got ripped off
->  by the corrupt Facebook, which I aim to destroy.[^2]
+>  by the corrupt Facebook, which I aim to destroy.[^15]
 
 The Finger User Information Protocol was last outlined in [RFC 1288][6]
 published in 1991. It's dirt simple: a TCP server listens on port 79 and accepts
@@ -137,7 +137,7 @@ Plan: Florida lawmakers rail against FBI for secrecy on voter breaches https://t
 {{< /highlight >}}
 
 This exercise is just for laughs. The `finger` client is a pretty poor interface
-to Twitter[^3], but in using it with contemporary content you can see a spark
+to Twitter[^16], but in using it with contemporary content you can see a spark
 of how an earlier generation of Internet users would have found this first
 introduction to social software compelling.
 
@@ -156,8 +156,7 @@ Want to tinker? Download and play with the code example above in my [twinger][12
 [10]: https://github.com/ChimeraCoder/anaconda
 [11]: http://www.cs.unc.edu/~jeffay/courses/nidsS05/attacks/seely-RTMworm-89.html#p4.5.2
 [12]: https://github.com/jpignata/twinger
-
-[^0]: As in, [let your fingers do the walking][4] or pointing.
-[^1]: Summarized from [an alt.forklore.computers post from 1990.](https://groups.google.com/forum/#!msg/alt.folklore.computers/IdFAN6HPw3k/Ci5BfN8i26AJ)
-[^2]: He appears to be quite a character. To wit, he maintains an exhaustive [bucket list][5] of what he intends to do before he dies in 2043, which he plans to be at the circumstance of a gunshot wound by a jealous husband.
-[^3]: Regrettably, most implementions don't even support multi-byte characters, so don't expect to see any non-ASCII characters or tears-of-joy emoji and the like. See **BUGS** in FINGER(1) on BSD-like systems such as Darwin.
+[^13]: As in, [let your fingers do the walking][4] or pointing.
+[^14]: Summarized from [an alt.forklore.computers post from 1990.][2]
+[^15]: He appears to be quite a character. To wit, he maintains an exhaustive [bucket list][5] of what he intends to do before he dies in 2043, which he plans to be at the circumstance of a gunshot wound by a jealous husband.
+[^16]: Regrettably, most implementions don't even support multi-byte characters, so don't expect to see any non-ASCII characters or tears-of-joy emoji and the like. See **BUGS** in FINGER(1) on BSD-like systems such as Darwin.
