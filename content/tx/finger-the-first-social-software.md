@@ -38,7 +38,7 @@ network. Amongst his inventions Les Earnest lists:
 > by the corrupt Facebook, which I aim to destroy.[^15]
 
 \
-**The Finger User Information Protocol** was last outlined in [RFC 1288][6]
+**The Finger User Information Protocol** was last outlined in [RFC1288][6]
 published in 1991. It's dirt simple: a TCP server listens on port 79 and accepts
 one-line queries of ASCII text which typically passes a username and a CRLF. The
 server then returns whatever information it has about a given user. If no
