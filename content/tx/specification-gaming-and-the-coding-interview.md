@@ -115,11 +115,11 @@ be useful, and perhaps even somewhat discriminatory as not all candidates could
 possibly devote the required “grinding” time to prepare appropriately.
 
 There’s something symmetric and satisfying about technology companies that pride
-themselves on relentless optimization having their own interview processes
-relentlessly optimized by job candidates. These filters are, at best,
-identifying the right, motivated candidates, or at worst, creating a generation
-of mercenaries with a mentality that to achieve a high paying job in
-technology one must learn the test and game the specification.
+themselves on relentless optimization interviewing candidates that are
+themselves optimizing for maximum performance against the interview. These
+filters are, at best, identifying the right, motivated candidates, or at worst,
+creating a generation of mercenaries with a mentality that to achieve a high
+paying job in technology one must learn the test and game the specification.
 
 The top all time post on [/r/cscareerquestions][6] is titled "[Accidentally
 destroyed production database on first day of a job, and was told to
@@ -128,12 +128,13 @@ environment setup document that included production database credentials which
 they used to run a series of commands starting with `DROP DATABASE`. The veneer
 of the coding interview suggests to candidates that hiring managers are wisened
 monks who spent a lifetime in study for this moment to test your mettle. It
-belies the reality: that same hiring manager is going to give you a Word
-document with production database credentials on your first day and no amount of
-practicing dynamic programming questions will prepare you for that.
+belies the reality: that same hiring manager has no idea what they are doing and
+will hand you a Word document with production database credentials on your first
+day. No amount of practicing dynamic programming questions will prepare you
+for that.
 
 Trends in hiring move slowly and while anxiety and backlash over the coding
-interview continues to build, there isn't much in the way of data to show if
+interview seems to be building, there isn't much in the way of data to show if
 these interviews are effective or otherwise. For professional developers some
 navel gazing and soul searching is warranted: is this tool identifying the right
 candidates or are we unintentionally asking people to drive backwards?
