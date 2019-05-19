@@ -7,7 +7,7 @@ dek: "Are LeetCode-style interviews helping companies hire the right
 candidates or has the specification drifted from the goal?"
 ---
 
-[Specification gaming][0] is the unexpected exploitation of the conditions of a
+**[Specification gaming][0] is the unexpected exploitation** of the conditions of a
 test by an agent to satisfy it without actually completing the intended
 objective. Processes evolve, side-stepping their creators’ motivations, and
 instead work to maximize their performance in the environment in which they’ve
@@ -40,7 +40,8 @@ feedback whose source had either drifted from or had not been seamlessly aligned
 with the intended goal. In effect, the Roomba's operator had created conditions
 in the training scenario that unintentionally asked it to drive backwards.
 
-_Meanwhile_, at the same companies generating hype about the limitless promise
+\
+**Meanwhile at the same companies** generating hype about the limitless promise
 of artificial intelligence, engineers work to help their teams build their ranks
 through coding interviews. The coding interview is a practical examination of a
 candidate’s ability to write software by posing a problem to be solved
@@ -77,14 +78,14 @@ through 50,000 items for every item looking for duplicates, and your computer
 will have to run 2.5 billion operations in order to produce a result for you.
 This is a brute force approach to solving the problem.
 
-Fear not. Better, less obvious solutions to this problem exist. One approach is
-to take advantage of bit manipulation and the exclusive-or operation.  Any
-number XOR zero will equal the original number, and any number XOR itself will
-equal zero. Thus, if you start with zero, iterate through each number in the
-list, and XOR them all against that number, you will be left with the number
-without a duplicate. For this solution, your computer only evaluates each number
-in the list once and stores only the running tally in memory. Linear time,
-constant space. Cut the check.
+Better, less obvious solutions to this problem exist. One approach is to take
+advantage of bit manipulation and the exclusive-or operation.  Any number XOR
+zero will equal the original number, and any number XOR itself will equal zero.
+Thus, if you start with zero, iterate through each number in the list, and XOR
+them all against that number, you will be left with the number without a
+duplicate. For this solution, your computer only evaluates each number in the
+list once and stores only the running tally in memory. Linear time, constant
+space. Cut the check.
 
 That’s an easy, contrived example. [Leetcode][4] is a website that provides a
 thousand such questions and an interactive environment to test your prowess
@@ -98,14 +99,14 @@ this question range from using Deterministic Finite Automata to parse the
 string, to regular expressions gymnastics, to “`return !isNaN(parseFloat(s))`
 lol.”
 
-The internet gives us a window into this subculture of career hacking and
-coding interview preparation. On forums like [/r/cscareerquestions][6], job
-seekers talk about engaging in mock whiteboard interviews with each other and
-studying these kinds of problems for hours a day as “grinding Leetcode.”
-Leetcode organizes their questions by subject area such as breadth-first
-search, or linked lists, or dynamic programming, and by company. Premium
-subscribers are given access to the top N questions purportedly asked by top
-tier technology companies.
+The Internet gives us a window into a subculture of career hacking and
+coding interview preparation. In communities like the [/r/cscareerquestions][6]
+subreddit, job seekers talk about engaging in mock whiteboard interviews with
+each other and studying these kinds of problems for hours a day as “grinding
+Leetcode.” Leetcode organizes their questions by subject area such as
+breadth-first search, or linked lists, or dynamic programming, and by company.
+Premium subscribers are given access to the top N questions purportedly asked by
+top tier technology companies.
 
 Some argue that these coding interviews are far better than the previous trend
 of why-is-a-manhole-cover-round-style brainteasers in that at least these
@@ -121,7 +122,7 @@ filters are, at best, identifying the right, motivated candidates, or at worst,
 creating a generation of mercenaries with a mentality that to achieve a high
 paying job in technology one must learn the test and game the specification.
 
-The top all time post on [/r/cscareerquestions][6] is titled "[Accidentally
+The top all time post on /r/cscareerquestions is titled "[Accidentally
 destroyed production database on first day of a job, and was told to
 leave...][7]" It recounts the experience of a new graduate following an
 environment setup document that included production database credentials which

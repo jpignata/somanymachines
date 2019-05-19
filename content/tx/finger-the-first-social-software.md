@@ -6,7 +6,7 @@ dek: "One of the first examples of social software in an internetworked
 environment still ships with your operating system. Let's connect 1972 to 2019."
 ---
 
-In the early seventies at the [Stanford Artificial Intelligence Lab][0], [Les
+**In the early seventies** at the [Stanford Artificial Intelligence Lab][0], [Les
 Earnest][1] built a small utility to help people with disparate schedules find
 each other for both professional and social purposes. Prior to his program
 `finger`[^13], users would run a version of `who` to figure out what users were
@@ -27,18 +27,18 @@ respectively, a la out-of-office messages and microblogging.
 Presaging features that would become de rigueur in both productivity
 applications and social software, `finger` existed in a world of early
 networking where exposing the full names and email addresses of users was both
-convenient and the privacy risk introduced thought acceptable. By the late
-1990's, the risk profile had changed with a growing Internet user base and
-several [security incidents][11], causing `finger` to lose momentum. Today
-services no longer expose a `finger` server, but in the pre-commercial, shell
-account era, `finger` was widely used to connect with colleagues and friends. If
-you attended college during this time `finger` was the social network. Amongst
-his inventions Les Earnest lists:
+convenient and the privacy risk introduced thought acceptable. As the Internet
+matured, several high-profile [security incidents][11] and [controversies][17]
+caused `finger` to lose momentum and by the late 1990's the risks increased in
+proportion with a growing Internet user base.  Today services no longer expose a
+`finger` server, but in the pre-commercial, shell account era, it was the social
+network. Amongst his inventions Les Earnest lists:
 
->  Social networking and blogging service (FINGER, 1972), which got ripped off
->  by the corrupt Facebook, which I aim to destroy.[^15]
+> Social networking and blogging service (FINGER, 1972), which got ripped off
+> by the corrupt Facebook, which I aim to destroy.[^15]
 
-The Finger User Information Protocol was last outlined in [RFC 1288][6]
+\
+**The Finger User Information Protocol** was last outlined in [RFC 1288][6]
 published in 1991. It's dirt simple: a TCP server listens on port 79 and accepts
 one-line queries of ASCII text which typically passes a username and a CRLF. The
 server then returns whatever information it has about a given user. If no
@@ -160,3 +160,4 @@ Want to tinker? Download and play with the code example above in my [twinger][12
 [^14]: Summarized from [an alt.forklore.computers post from 1990.][2]
 [^15]: He appears to be quite a character. To wit, he maintains an exhaustive [bucket list][5] of what he intends to do before he dies in 2043, which he plans to be at the circumstance of a gunshot wound by a jealous husband.
 [^16]: Regrettably, most implementions don't even support multi-byte characters, so don't expect to see any non-ASCII characters or tears-of-joy emoji and the like. See **BUGS** in FINGER(1) on BSD-like systems such as Darwin.
+[17]: http://www.rajivshah.com/Case_Studies/Finger/Finger.htm#_Toc484593873
