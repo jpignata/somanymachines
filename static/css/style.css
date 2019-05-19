@@ -70,7 +70,7 @@ article sup {
 
 article h1 {
 	font-weight: 500;
-	margin: 0px;
+  margin: 0 0 0.6em 0;
 }
 
 time {
