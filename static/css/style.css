@@ -2,7 +2,7 @@
   header {
     margin-top: 40px;
     width: 680px;
-    font-size: 32px;
+    font-size: 40px;
   }
 
   main {
@@ -23,7 +23,7 @@
   header {
     margin-top: 20px;
     width: 100%;
-    font-size: 20px;
+    font-size: 28px;
   }
 
   h1 {
@@ -39,23 +39,40 @@
   }
 }
 
+@media (max-width: 340px) {
+  header {
+    font-size: 20px;
+  }
+
+  div.headline {
+    font-size: 14px;
+    vertical-align: top;
+  }
+
+  .headline time {
+    font-size: 10px;
+  }
+}
+
 body {
 	font-family: 'Helvetica Neue', 'Arial', sans-serif;
 }
 
 a, a:visited {
 	text-decoration: none;
-  color: #DC143C;
+  color: #43B3A2;
 }
 
 header {
   margin-left: auto;
   margin-right: auto;
   font-family: 'Orbitron', sans-serif;
+  background-color: #E86252;
 }
 
 header a, header a:visited {
-	color: #444;
+  padding-left: 10px;
+	color: #fff;
 }
 
 article {
