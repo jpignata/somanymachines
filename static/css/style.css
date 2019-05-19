@@ -81,6 +81,7 @@ header {
   font-family: 'Orbitron', 'Monaco', 'Courier New', Courier, monospace;
   background-color: #E86252;
   font-weight: bold;
+  line-height: 1.5em;
 }
 
 header a, header a:visited {
