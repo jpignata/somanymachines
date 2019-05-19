@@ -128,11 +128,11 @@ leave...][7]" It recounts the experience of a new graduate following an
 environment setup document that included production database credentials which
 they used to run a series of commands starting with `DROP DATABASE`. The veneer
 of the coding interview suggests to candidates that hiring managers are wisened
-monks who spent a lifetime in study for this moment to test your mettle. It
-belies the reality: that same hiring manager has no idea what they are doing and
-will hand you a Word document with production database credentials on your first
-day. No amount of practicing dynamic programming questions will prepare you
-for that.
+monks who spent a lifetime in study for this moment to test your mettle. The
+power dynamics of the situation belie the reality: that same hiring manager has
+no idea what they are doing and will hand you a Word document with production
+database credentials on your first day. No amount of practicing dynamic
+programming questions will prepare you for that.
 
 Trends in hiring move slowly and while anxiety and backlash over the coding
 interview seems to be building, there isn't much in the way of data to show if
