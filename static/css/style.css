@@ -18,6 +18,14 @@
     font-size: 2em;
     line-height: 1.3em;
   }
+
+  footer div:first-child {
+    float: left;
+  }
+
+  footer div:last-child {
+    float: right;
+  }
 }
 
 @media (max-width: 768px) {
@@ -42,6 +50,10 @@
   article h1 {
     font-size: 1.7em;
     line-height: 1.3em;
+  }
+
+  footer div {
+    text-align: center;
   }
 }
 
@@ -120,7 +132,9 @@ time {
 }
 
 footer {
-  min-height: 60px;
+  padding: 30px 0 60px 0;
+  color: #aaa;
+  font-size: 14px;
 }
 
 .dek {

@@ -17,6 +17,13 @@
 			<div>
 				{{ template "_internal/disqus.html" . }}
 			</div>
+      <footer>
+        <div>
+          <a href="https://twitter.com/jpignata">@jpignata</a> / 
+          <a href="email:john@pignata.com?subject={{ .Title }}">john@pignata.com</a>
+        </div>
+        <div>Published on {{ .Date.Format "Monday, January 2, 2006 at 3:04pm" }}</div>
+      </footer>
 		</article>
 	</main>
 {{ partial "sidebar.html" . }}
