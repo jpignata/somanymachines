@@ -157,3 +157,7 @@ blockquote {
   border-left: 8px solid rgba(52, 77, 92, 0.25);
   padding-left: 10px;
 }
+
+hr {
+  margin-top: 3em;
+}

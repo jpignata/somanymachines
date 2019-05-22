@@ -1,6 +1,6 @@
 ---
 title: "Using Go and AWS Parameter Store to Build Portable CLI Tools"
-date: 2019-05-21T22:00:00-04:00
+date: 2019-05-22T09:00:00-04:00
 type: post
 dek: "How do you keep all of the random scripts you use working across systems?
 Let's explore One Weird Trick to share your configuration securely on AWS's
@@ -8,7 +8,7 @@ dime."
 ---
 
 **Last year I made** a small list of productivity-related New Year's resolutions
-to tackle in 2019. This list includes random items such as switching to
+to tackle in 2019. This list included random items such as switching to
 right-handed mousing (as peripherals manufacturers continue to ignore [my cohort
 in the market][0]), moving from Ruby to Python for general purpose scripting
 (which is for another post), and consolidating the various scripts I use across
@@ -20,13 +20,13 @@ assumptions.
 
 In my effort to automate repetitive tasks, my system incidentally accrued
 libraries, configuration, and random settings that silently made all these
-scripts work.  Whatever laptop I was using ended up becoming a graveyard of
-state. Writing these scripts with expediency in mind, I didn't spend any time
-jotting down documentation so their configuration was only repeatable if I
-happened to recall the incantations I ran or if the error messages were 
-mercifully obvious. I wanted someway to clone a repo, run a build command, and
-have all of the tools I need without any runtime installation, gem bundling, or
-other yak shaving.
+scripts work. Writing these scripts with expediency in mind, I didn't spend any
+time jotting down documentation so their configuration was only repeatable if I
+happened to recall the incantations I ran or if the error messages were
+mercifully obvious. Whatever laptop I was using ended up becoming a graveyard of
+state. I wanted someway to clone a repo, run a build command, and have all of
+the tools I need without any runtime installation, gem bundling, or other yak
+shaving.
 
 Enter [Go][1]. Go shines for this task. As long as you have the Go toolchain
 installed, you can repeatably build little tools across different architectures
@@ -35,17 +35,17 @@ modules][2] introduced in 1.11 adds versioned packages to the build process
 which allows you to refer to specific dependencies that Go will fetch prior to
 build. This addressed the software prerequisites component of my local state
 problem. All of the tools I've put together share a single repo called
-[toolbox][10] which has a single Makefile that builds each executable and
-installs them in my home bin directory.
+[toolbox][10] which has a `Makefile` that builds each executable and installs
+them in my home bin directory.
 
-Next step was to eliminate or centralize individual configuration data for each
-tool. The requirement I had was that I would be able to use the tool
+The next step was to eliminate or centralize individual configuration data for
+each tool. The requirement I had in mind was to able to use the tools
 immediately without setting up multiple configuration files or copying things.
-At the same time I obviously didn't want to store things like access tokens in
-source control. For example, I often [Gist][3] files to share them with others
-so I have a small script that will accept a filename as an argument or contents
-from STDIN and return a URL. This requires a GitHub personal access token with
-the ability to create new gists. Previously, my approach was to have a dotfile
+At the same time I didn't want to store things like access tokens in source
+control. For example, I often [Gist][3] files to share them with others so I
+have a small script that will accept a filename as an argument or contents from
+STDIN and return a URL. This requires a GitHub personal access token with the
+ability to create new gists. Previously, my approach was to have a dotfile
 called `.github` where the token would be the payload. Each time I wanted to use
 the script on a new system, I'd either have to create a new personal access
 token or copy the contents of the file. Friction.
@@ -57,15 +57,15 @@ feature in Systems Manager is called [Parameter Store][5]; it provides storage
 for configuration items that can be optionally encrypted via AWS Key Management
 Service (KMS). These configuration items can then be retrieved via API calls
 using AWS IAM authentication. As a bonus, all calls to Parameter Store are
-logged in AWS CloudTrail which captures an audit log of every call to your
+logged in [AWS CloudTrail][12] which captures an audit log of every call to your
 configuration items with information about who requested it, when, and with what
 credentials.
 
 The best part? It's totally free.[^6]
 
-While not intended for this purpose, this service is an ideal place to keep
-configuration for local CLI tools that could be easily shared between computers.
-The [AWS SDK for Go][9] makes it dead simple to use Parameter Store:
+While not intended for this purpose, Parameter Store is an ideal place to keep
+configuration for local programs that are run on multiple Internet connected
+computers. The [AWS SDK for Go][9] makes it dead simple to use Parameter Store:
 
 {{< highlight golang >}}
 package config
@@ -100,21 +100,21 @@ This will use AWS CLI's configured credentials which reduces the state problem
 down to a single piece of configuration to put in place across all systems.
 Since the SDK can use any credentials the AWS CLI can use, these credentials can
 be temporary, based on an IAM role, and require multi-factor authentication for
-added security. This package can be shared across all of the CLI tools and once
-configuration parameters are added to Parameter Store, they will be accessible
-from any computer I use. This has the downside of requiring Internet access, but
-practically most of the tools that are require some kind of configuration also
-interoperate with Internet services anyway.
+additional security. This package can be shared across all of the CLI tools and
+once configuration parameters are added to Parameter Store, they will be
+accessible from any computer I use. While this has the downside of requiring
+Internet access, practically speaking, the tools that are require this kind of
+configuration also interoperate with Internet services.
 
-The AWS CLI is used to add and update parameters:
+Parameters and be managed via the AWS Management Console or the [AWS CLI][12]:
 
 {{< highlight golang >}}
 read -s value && aws ssm put-parameter --name keyName --value "$value" --type SecureString --overwrite
 {{< /highlight >}}
 
-Now in tools where I need this external configuration, I can call
-`config.Get("keyName")` and to retrieve the data instead of reading from a file
-or environment variable.
+Now in tools where I need this piece of external configuration, I can call
+`config.Get("keyName")` and retrieve the data instead of reading it from a local
+file or environment variable.
 
 Some examples of tools I use which use Parameter Store to share some kind of
 authentication token:
@@ -176,3 +176,5 @@ just work.
 [9]: https://github.com/aws/aws-sdk-go
 [10]: https://github.com/jpignata/toolbox
 [11]: https://adventofcode.com
+[12]: https://docs.aws.amazon.com/cli/latest/reference/ssm/index.html
+[13]: https://aws.amazon.com/cloudtrail/
