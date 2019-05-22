@@ -1,9 +1,10 @@
 <div class="article_link">
   <div class="headline">
     <a href="{{ .Permalink }}">{{ .Title }}</a>
-    <time>&mdash; {{ .Date.Format "2006-01-02" }}</time>
   </div>
-
-  <div class="dek">{{ .Params.dek }}</div>
+  <div class="dek">
+    <time>{{ .Date.Format "2006-01-02" }} &mdash;</time>
+    {{ .Params.dek }}
+  </div>
 
 </div>

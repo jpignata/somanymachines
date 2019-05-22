@@ -107,23 +107,23 @@ article {
   line-height: 1.5em;
 }
 
-article sup {
-  font-size: 8px;
-}
-
 article h1 {
   font-family: 'Lora', Georgia, serif;
   font-weight: 500;
 }
 
+sup {
+  line-height: 0;
+  font-size: 75%;
+}
+
 time {
   font-weight: 200;
-  font-size: 16px;
   line-height: 2em;
 }
 
 .headline {
-  font-size: 20px;
+  font-size: 22px;
   vertical-align: top;
 }
 
@@ -141,10 +141,6 @@ footer {
   font-size: 14px;
   margin: 0 0 2em 0;
   line-height: 22px;
-}
-
-.article_link {
-  margin: 0 0 2em 0;
 }
 
 pre {
