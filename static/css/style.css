@@ -161,3 +161,25 @@ blockquote {
 hr {
   margin-top: 3em;
 }
+
+img {
+  width: 100%;
+  max-width: 680px;
+}
+
+figcaption {
+  margin-top: -1.5em;
+  font-weight: 300;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+figcaption a, figcaption a:visited {
+  color: #888;
+}
+
+iframe {
+  border: none;
+  width: 100%;
+  height: 500px;
+}
