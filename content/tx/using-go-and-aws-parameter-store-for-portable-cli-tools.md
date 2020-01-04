@@ -3,20 +3,19 @@ title: "Using Go and AWS Parameter Store to Build Portable CLI Tools"
 date: 2019-05-22T09:00:00-04:00
 type: post
 dek: "How do you keep all of the random scripts you use working across systems?
-Let's explore One Weird Trick to share your configuration securely on AWS's
-dime."
+Store and share your configuration securely on AWS's dime."
 ---
 
-**Last year I made** a small list of productivity-related New Year's resolutions
-to tackle in 2019. This list included random items such as switching to
-right-handed mousing (as peripherals manufacturers continue to ignore [my cohort
-in the market][0]), moving from Ruby to Python for general purpose scripting
-(which is for another post), and consolidating the various scripts I use across
-different systems to portable tools that can be used on any system without any
-setup. This last resolution was motivated by the pain I felt switching laptops
-at work. All of the little scripts I had littering my home directory were gone,
-and moving them over revealed an invisible substrate of dependencies and
-assumptions.
+**In January I made** a small list of productivity-related New Year's
+resolutions to tackle in 2019. This list included random items such as switching
+to right-handed mousing (as peripherals manufacturers continue to ignore [my
+cohort in the market][0]), moving from Ruby to Python for general purpose
+scripting (which is for another post), and consolidating the various scripts I
+use across different systems to portable tools that can be used on any system
+without any setup. This last resolution was motivated by the pain I felt
+switching laptops at work. All of the little scripts I had littering my home
+directory were gone, and moving them over revealed an invisible substrate of
+dependencies and assumptions.
 
 In my effort to automate repetitive tasks, my system incidentally accrued
 libraries, configuration, and random settings that silently made all these

@@ -3,7 +3,6 @@
 		<article>
 			<h1>{{ .Title }}</h1>
       <div class="dek">{{ .Params.dek }}</div>
-			<time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
 			<div>
 				{{ .Content }}
 			</div>
@@ -19,10 +18,9 @@
 			</div>
       <footer>
         <div>
-          <a href="https://twitter.com/jpignata">@jpignata</a> / 
           <a href="email:john@pignata.com?subject={{ .Title }}">john@pignata.com</a>
         </div>
-        <div>Published on {{ .Date.Format "Monday, January 2, 2006 at 3:04pm" }}</div>
+        <div>{{ .Date.Format "Monday, January 2, 2006" }}</div>
       </footer>
 		</article>
 	</main>

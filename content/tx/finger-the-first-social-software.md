@@ -3,7 +3,8 @@ title: "Finger: The First Social Software"
 date: 2019-05-18T12:00:00-04:00
 type: post
 dek: "One of the first examples of social software in an internetworked
-environment still ships with your operating system. Let's connect 1972 to 2019."
+environment still ships with your operating system. Let's connect 1972 to
+today."
 ---
 
 **In the early seventies** at the [Stanford Artificial Intelligence Lab][0], [Les
@@ -40,10 +41,10 @@ network. Amongst his inventions Les Earnest lists:
 \
 **The Finger User Information Protocol** was last outlined in [RFC1288][6]
 published in 1991. It's dirt simple: a TCP server listens on port 79 and accepts
-one-line queries of ASCII text which typically passes a username and a CRLF. The
-server then returns whatever information it has about a given user. If no
-username is provided, the server should return summary information of all
-online users.
+one-line queries of ASCII text which typically include a username and a CRLF.
+The server then returns whatever information it has about a given user. If no
+username is provided, the server should return summary information of all online
+users.
 
 If you use macOS or Linux, you have `finger` installed today. Open a new
 terminal and type `finger [username]`:

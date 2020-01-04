@@ -2,9 +2,8 @@
 title: "Mapping Nearby Aircraft Using AWS and a Raspberry Pi"
 date: 2019-05-25T09:00:00-04:00
 type: post
-dek: "Planes in much of the airspace over the US are now broadcasting vital
-information over radio in plain text. Using some JavaScript glue code and EC2,
-let's use that data to visualize nearby aircraft."
+dek: "Planes in the airspace over the US are broadcasting location
+information over radio in plain text and they are just asking to be mapped."
 ---
 
 ![](/images/mapping-nearby-aircraft-using-aws-and-a-raspberry-pi/listen.jpg)
