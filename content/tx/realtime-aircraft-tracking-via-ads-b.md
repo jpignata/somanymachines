@@ -34,7 +34,7 @@ I hacked together a quick map of traffic near my home:
 Using a Raspberry Pi with a [FlightAware Pro Stick][10], I'm repeating any ADS-B
 broadcast I receive to a WebSockets server I have running on an EC2 Spot
 instance[^4]. With a small amount of JavaScript hosted on Amazon S3 and the help
-of [Leaflet][5], and [Mapbox][6], I'm able to plot where aicraft are in
+of [Leaflet][5], and [Mapbox][6], I'm able to plot where aircraft are in
 real-time:
 
 <iframe src="https://somanymachines.com/airplanes"></iframe>
