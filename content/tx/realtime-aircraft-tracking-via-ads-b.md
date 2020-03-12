@@ -47,7 +47,7 @@ repo][8].
 [1]: https://flightaware.com/adsb/piaware/build
 [2]: https://flightaware.com/adsb/prostick/
 [3]: https://github.com/antirez/dump1090
-[^4]: EC2 Spot instances are a mechanism to acquire spare EC2 capacity for a significantly discounted rate with the trade-off that the capacity could be reclaimed if demand characteristics change. For anything stateless or low priority, you should prefer Spot over on-demand instances. For around $1 a month, Spot gives me an instance where I can run random processes like this one. The box running this web service has been up in `us-east-2` for over three months without interruption.
+[^4]: EC2 Spot is a mechanism to acquire spare EC2 capacity for a significantly discounted rate with the trade-off that the capacity could be reclaimed if demand characteristics change. For anything stateless or low priority, you should prefer Spot over on-demand instances. For around $1 a month, Spot gives me an instance where I can run random processes like this one. The box running this web service has been up in `us-east-2` for over three months without interruption.
 [5]: https://leafletjs.com
 [6]: https://www.mapbox.com
 [7]: https://somanymachines.com/airplanes/
