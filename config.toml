@@ -3,3 +3,6 @@ languageCode = "en-us"
 title = "so many machines"
 disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 disableHugoGeneratorInject = true
+
+[blackfriday]
+   hrefTargetBlank = true
