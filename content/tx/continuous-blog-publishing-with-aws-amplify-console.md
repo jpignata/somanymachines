@@ -89,7 +89,7 @@ Within *Details*, the link to the fully rendered site can be found:
 
 This allows reviewers to see the final product and provide more meaningful
 change reviews. Preview sites can even be optionally password protected to
-prevent issues with prying eyes or duplicate content.
+prevent prying eyes or issues with duplicate content.
 
 \
 **AWS Amplify Console supports other** static-site generators besides Hugo such
