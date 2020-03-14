@@ -8,7 +8,7 @@ awkwardly leaving me with no excuse but to do the right thing."
 ---
 
 **On my growing TODO list** there's a section I call [The Great Big Beautiful
-Tomorrow][1]. It's the subset of items of tasks that would undoubtedly
+Tomorrow][1]. It's the subset of tasks that would undoubtedly
 save time or be valuable to do, but continually get pushed down the stack due to
 priority starvation. So there they live. Sometimes I check in on them briefly,
 and then guiltily scroll away before I make eye contact. They are prisoners of
