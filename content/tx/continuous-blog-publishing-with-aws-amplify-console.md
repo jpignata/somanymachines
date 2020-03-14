@@ -78,7 +78,7 @@ helping to enable the code review component of their Git workflow. Through a
 feature called [Web Previews][17], pull requests are built and deployed to their
 own URL for people to inspect for QA of the actual rendered content versus
 reviewing Markdown files. Through an integration with GitHub, pull requests have
-an AWS Amplify Console Wbe Preview check that builds and deploys content when
+an AWS Amplify Console Web Preview check that builds and deploys content when
 the PR is updated.
 
 ![](/images/continuous-blog-publishing-with-aws-amplify-console/pull.png)
