@@ -43,7 +43,7 @@ being annoying but not painful or time intensive enough to fix properly.
 Android framework][10]. Part of Amplify's suite of products is the [AWS Amplify
 Console][11] which provides hosting for fullstack serverless applications. It
 connects to repos on GitHub, Bitbucket, or GitLab, runs a build, and deploys the
-result to Amazon S3 behind Amazon Cloudfront for content delivery. Plugging in
+result to Amazon S3 behind Amazon CloudFront for content delivery. Plugging in
 my blog repo in the console, I was blown away to see it create a full publishing
 pipeline for my blog. Not only did the console detect that the blog used Hugo as
 a static site generator, but when I hit *Save and Deploy*, it published the
