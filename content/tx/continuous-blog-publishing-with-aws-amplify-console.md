@@ -31,8 +31,8 @@ synchronize my repo with the S3 bucket. It would be auto-magic! The future is
 bright and wonderful.
 
 But, ehhh. I guess I'll need to put it in some kind of [AWS CloudFormation][8]
-template. I'll probably need to look up the syntax. That sounds boring. And
-also. The Internet has so many fun things to read and do and watch. What I'm
+template. I'll probably need to look up the syntax. That sounds boring. 
+The Internet has so many fun things to read and do and watch.
 If the Internet wasn't fun I probably would have gotten this done,
 but it is, so I didn't. Instead, after my infrequent blogging, I did the CLI
 futzing and often got the files copied. It is a task that supports inertia by
