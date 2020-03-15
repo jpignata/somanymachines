@@ -13,7 +13,7 @@ save time or be valuable to do, but continually get pushed down the stack due to
 priority starvation. Sometimes I check in on them briefly,
 and then guiltily scroll away before I make eye contact. They are prisoners of
 my good intentions and I keep them in my [Katamari][2] of a TODO list,
-collecting dust. Toward the bottom, there's a gaggle of blog-related items
+collecting dust. Toward the bottom, there's a bundle of blog-related items
 including one that reads "write blog posts." Yeah. Shut up, TODO. I'll get to it.
 Somewhere below that another reads: "setup a publishing pipeline for the blog."
 
