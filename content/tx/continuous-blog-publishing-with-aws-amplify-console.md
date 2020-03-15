@@ -32,8 +32,8 @@ bright and wonderful.
 
 But, ehhh. I guess I'll need to put it in some kind of [AWS CloudFormation][8]
 template. I'll probably need to look up the syntax. That sounds boring. And
-also. The Internet! It has so many fun things to read and do and watch. What I'm
-saying is: if the Internet wasn't fun, I probably would have gotten this done
+also. The Internet has so many fun things to read and do and watch. What I'm
+If the Internet wasn't fun I probably would have gotten this done,
 but it is, so I didn't. Instead, after my infrequent blogging, I did the CLI
 futzing and often got the files copied. It is a task that supports inertia by
 being annoying but not painful or time intensive enough to fix properly.
@@ -51,7 +51,7 @@ content of the site in less than a couple of minutes. A few more mouse clicks,
 and I had a free SSL certificate from [AWS Certificate Manager][13], and rewrite
 rules in place.  Since I host my domain in [Amazon Route 53][12], the Amplify
 Console was even able to automatically create the CNAME and ALIAS records to
-wire the site up to production. Now everytime I pushed to my master branch, my
+wire the site up to production. Now everytime I push to my master branch, my
 blog would be immediately deployed without any additional steps.
 
 Without intending to, I had unwittingly crossed an item off my TODO list. That's
