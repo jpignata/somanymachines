@@ -2,7 +2,7 @@
   header {
     margin-top: 40px;
     width: 680px;
-    font-size: 40px;
+    font-size: 60px;
   }
 
   main {
@@ -94,6 +94,10 @@ header {
   background-color: #E86252;
   font-weight: bold;
   line-height: 1.5em;
+}
+
+div#posts {
+  margin-top: 30px;
 }
 
 header a, header a:visited {
