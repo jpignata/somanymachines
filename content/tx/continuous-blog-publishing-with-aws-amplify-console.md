@@ -10,7 +10,7 @@ awkwardly leaving me with no excuse but to do the right thing."
 **On my growing TODO list** there's a section I call [The Great Big Beautiful
 Tomorrow][1]. It's the subset of tasks that would undoubtedly
 save time or be valuable to do, but continually get pushed down the stack due to
-priority starvation. So there they live. Sometimes I check in on them briefly,
+priority starvation. Sometimes I check in on them briefly,
 and then guiltily scroll away before I make eye contact. They are prisoners of
 my good intentions and I keep them in my [Katamari][2] of a TODO list,
 collecting dust. Toward the bottom, there's a gaggle of blog-related items
@@ -42,7 +42,7 @@ being annoying but not painful or time intensive enough to fix properly.
 **Last week I joined** the [AWS Amplify][10] team working on the [Amplify for
 Android framework][10]. Part of Amplify's suite of products is the [AWS Amplify
 Console][11] which provides hosting for fullstack serverless applications. It
-connects to repos on GitHub, Bitbucket, or GitLab, runs a build, a deploys the
+connects to repos on GitHub, Bitbucket, or GitLab, runs a build, and deploys the
 result to Amazon S3 behind Amazon Cloudfront for content delivery. Plugging in
 my blog repo in the console, I was blown away to see it create a full publishing
 pipeline for my blog. Not only did the console detect that the blog used Hugo as
