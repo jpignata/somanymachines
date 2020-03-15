@@ -114,7 +114,7 @@ be continuously publishing.
 [13]: https://aws.amazon.com/certificate-manager/
 [14]: https://aws.amazon.com/amplify/console/pricing
 [15]: https://console.aws.amazon.com/amplify/home?#/create
-[16]: https://circleci.com/blog/getting-your-manager-to-say-yes-to-devops-tools/
+[16]: https://circleci.com/blog/its-the-future/
 [17]: https://docs.aws.amazon.com/amplify/latest/userguide/pr-previews.html
 [18]: https://aws.amazon.com/s3/
 [19]: https://aws.amazon.com/cloudfront/
