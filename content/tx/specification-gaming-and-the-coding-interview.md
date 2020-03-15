@@ -134,10 +134,10 @@ no idea what they are doing and will hand you a Word document with production
 database credentials on your first day. No amount of practicing dynamic
 programming questions will prepare you for that.
 
-Trends in hiring move slowly and while anxiety and backlash over the coding
-interview seems to be building, there isn't much in the way of data to show if
-these interviews are effective or otherwise. For professional developers some
-navel gazing and soul searching is warranted: is this tool identifying the right
+\
+**Trends in hiring move slowly** and while anxiety and backlash over the coding
+interview is evident in murmurings, there isn't much data to show if these
+interviews are effective or otherwise. Is this tool identifying the right
 candidates or are we unintentionally asking people to drive backwards?
 
 [0]: https://vkrakovna.wordpress.com/2018/04/02/specification-gaming-examples-in-ai/
