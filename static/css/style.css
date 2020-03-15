@@ -3,6 +3,7 @@
     margin-top: 40px;
     width: 680px;
     font-size: 60px;
+    text-align: center;
   }
 
   main {
@@ -39,6 +40,11 @@
     font-size: 28px;
   }
 
+  header a, header a:visited {
+    padding-left: 10px;
+  }
+
+
   main {
     width: 100%;
   }
@@ -60,6 +66,10 @@
 @media (max-width: 340px) {
   header {
     font-size: 20px;
+  }
+
+  header a, header a:visited {
+    padding-left: 10px;
   }
 
   div.headline {
@@ -97,11 +107,10 @@ header {
 }
 
 div#posts {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 header a, header a:visited {
-  padding-left: 10px;
   color: #fff;
 }
 
