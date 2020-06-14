@@ -60,7 +60,7 @@ logged in [AWS CloudTrail][12] which captures an audit log of every call to your
 configuration items with information about who requested it, when, and with what
 credentials.
 
-The best part? It's totally free.[^6]
+The best part? It's totally free.[^1]
 
 While not intended for this purpose, Parameter Store is an ideal place to keep
 configuration for local programs that are run on multiple Internet connected
@@ -163,13 +163,14 @@ continue to write small utilities in my toolbox repo as I come across repetitive
 tasks and know that the next time I migrate to a new system everything should
 just work.
 
+[^1]: Last month, AWS curiously introduced [advanced parameters][7] which cost a nickel a month and provide more generous limits for size and history. Standard parameters are still totally free as in beer. This isn't to be confused with [AWS Secrets Manager][8] which provides some overlapping functionality with added features around secret rotation, AWS service integration, and cross-account access, but costs around $0.40 a secret and five cents per 10K API calls.
+
 [0]: https://simpsons.fandom.com/wiki/The_Leftorium
 [1]: https://www.golang.org
 [2]: https://github.com/golang/go/wiki/Modules
 [3]: https://gist.github.com
 [4]: https://aws.amazon.com/systems-manager/
 [5]: https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html
-[^6]: Last month, AWS curiously introduced [advanced parameters][7] which cost a nickel a month and provide more generous limits for size and history. Standard parameters are still totally free as in beer. This isn't to be confused with [AWS Secrets Manager][8] which provides some overlapping functionality with added features around secret rotation, AWS service integration, and cross-account access, but costs around $0.40 a secret and five cents per 10K API calls.
 [7]: https://aws.amazon.com/about-aws/whats-new/2019/04/aws_systems_manager_parameter_store_introduces_advanced_parameters/
 [8]: https://aws.amazon.com/secrets-manager
 [9]: https://github.com/aws/aws-sdk-go

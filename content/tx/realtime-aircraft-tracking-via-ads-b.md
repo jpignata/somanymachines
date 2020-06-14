@@ -7,7 +7,6 @@ information over radio in plain text and they are just asking to be mapped."
 ---
 
 ![](/images/mapping-nearby-aircraft-using-aws-and-a-raspberry-pi/listen.jpg)
-<figcaption>[Rare Historical Photos][0]</figcaption>
 
 Around the turn of the century, increased air travel had started to strain the
 air traffic control system causing frequent travel delays and threatening
@@ -33,7 +32,7 @@ I hacked together a quick map of traffic near my home:
 
 Using a Raspberry Pi with a [FlightAware Pro Stick][10], I'm repeating any ADS-B
 broadcast I receive to a WebSockets server I have running on an EC2 Spot
-instance[^4]. With a small amount of JavaScript hosted on Amazon S3 and the help
+instance[^0]. With a small amount of JavaScript hosted on Amazon S3 and the help
 of [Leaflet][5], and [Mapbox][6], I'm able to plot where aircraft are in
 real-time:
 
@@ -43,11 +42,11 @@ real-time:
 You can find the little bits of glue code powering it in my [aircraft_map
 repo][8].
 
-[0]: https://rarehistoricalphotos.com/aircraft-detection-radar-1917-1940/
+[^0]: EC2 Spot is a mechanism to acquire spare EC2 capacity for a significantly discounted rate with the trade-off that the capacity could be reclaimed if demand characteristics change. For anything stateless or low priority, you should prefer Spot over on-demand instances. For around $1 a month, Spot gives me an instance where I can run random processes like this one. The box running this web service has been up in `us-east-2` for over three months without interruption.
+
 [1]: https://flightaware.com/adsb/piaware/build
 [2]: https://flightaware.com/adsb/prostick/
 [3]: https://github.com/antirez/dump1090
-[^4]: EC2 Spot is a mechanism to acquire spare EC2 capacity for a significantly discounted rate with the trade-off that the capacity could be reclaimed if demand characteristics change. For anything stateless or low priority, you should prefer Spot over on-demand instances. For around $1 a month, Spot gives me an instance where I can run random processes like this one. The box running this web service has been up in `us-east-2` for over three months without interruption.
 [5]: https://leafletjs.com
 [6]: https://www.mapbox.com
 [7]: https://somanymachines.com/airplanes/
