@@ -10,11 +10,11 @@ today."
 **In the early seventies** at the [Stanford Artificial Intelligence Lab][0], [Les
 Earnest][1] built a small utility to help people with disparate schedules find
 each other for both professional and social purposes. Prior to his program
-`finger`[^13], users would run a version of `who` to figure out what users were
+`finger`[^1], users would run a version of `who` to figure out what users were
 logged in and what physical terminal they were using by mentally mapping cryptic
 user IDs to people and line numbers to physical terminals in the lab. Building
 on `who`, Les wrote finger to provide a richer display of this information by
-mapping user IDs and ttys into peoples' names and physical places.[^14]
+mapping user IDs and ttys into peoples' names and physical places.[^2]
 
 Somewhere down the road, `finger` became a [service][3] which allowed foreign
 systems to query user status across a network allowing users to peek in on one
@@ -29,14 +29,14 @@ Presaging features that would become de rigueur in both productivity
 applications and social software, `finger` existed in a world of early
 networking where exposing the full names and email addresses of users was both
 convenient and the privacy risk introduced thought acceptable. As the Internet
-matured, several high-profile [security incidents][11] and [controversies][17]
+matured, several high-profile [security incidents][11] and [controversies][13]
 caused `finger` to lose momentum and by the late 1990's the risks increased in
 proportion with a growing Internet user base.  Today services no longer expose a
 `finger` server, but in the pre-commercial, shell account era, it was the social
 network. Amongst his inventions Les Earnest lists:
 
 > Social networking and blogging service (FINGER, 1972), which got ripped off
-> by the corrupt Facebook, which I aim to destroy.[^15]
+> by the corrupt Facebook, which I aim to destroy.[^3]
 
 \
 **The Finger User Information Protocol** was last outlined in [RFC1288][6]
@@ -138,11 +138,16 @@ Plan: Florida lawmakers rail against FBI for secrecy on voter breaches https://t
 {{< /highlight >}}
 
 This exercise is just for laughs. The `finger` client is a pretty poor interface
-to Twitter[^16], but in using it with contemporary content you can see a spark
+to Twitter[^4], but in using it with contemporary content you can see a spark
 of how an earlier generation of Internet users would have found this first
 introduction to social software compelling.
 
 Want to tinker? Download and play with the code example above in my [twinger][12] repo.
+
+[^1]: As in, [let your fingers do the walking][4] or pointing.
+[^2]: Summarized from [an alt.forklore.computers post from 1990.][2]
+[^3]: He appears to be quite a character. To wit, he maintains an exhaustive [bucket list][5] of what he intends to do before he dies in 2043, which he plans to be at the circumstance of a gunshot wound by a jealous husband.
+[^4]: Regrettably, most implementions don't even support multi-byte characters, so don't expect to see any non-ASCII characters or tears-of-joy emoji and the like. See **BUGS** in FINGER(1) on BSD-like systems such as Darwin.
 
 [0]: https://ai.stanford.edu/
 [1]: https://web.stanford.edu/~learnest/
@@ -157,8 +162,4 @@ Want to tinker? Download and play with the code example above in my [twinger][12
 [10]: https://github.com/ChimeraCoder/anaconda
 [11]: http://www.cs.unc.edu/~jeffay/courses/nidsS05/attacks/seely-RTMworm-89.html#p4.5.2
 [12]: https://github.com/jpignata/twinger
-[^13]: As in, [let your fingers do the walking][4] or pointing.
-[^14]: Summarized from [an alt.forklore.computers post from 1990.][2]
-[^15]: He appears to be quite a character. To wit, he maintains an exhaustive [bucket list][5] of what he intends to do before he dies in 2043, which he plans to be at the circumstance of a gunshot wound by a jealous husband.
-[^16]: Regrettably, most implementions don't even support multi-byte characters, so don't expect to see any non-ASCII characters or tears-of-joy emoji and the like. See **BUGS** in FINGER(1) on BSD-like systems such as Darwin.
-[17]: http://www.rajivshah.com/Case_Studies/Finger/Finger.htm#_Toc484593873
+[13]: http://www.rajivshah.com/Case_Studies/Finger/Finger.htm#_Toc484593873
