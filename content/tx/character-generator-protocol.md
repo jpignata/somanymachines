@@ -77,7 +77,7 @@ PORT = 19
 WIDTH = 72
 
 
-def generate(client) -> None:
+def generate(client):
     for line in count(1):
         try:
             for column in range(WIDTH):
@@ -90,7 +90,7 @@ def generate(client) -> None:
             break
 
 
-def server() -> None:
+def server():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, True)
@@ -147,7 +147,7 @@ PORT = 19
 WIDTH = 72
 
 
-def generate() -> None:
+def generate():
     lines = count(1)
     reply = b''
 
@@ -162,7 +162,7 @@ def generate() -> None:
     return reply[:MAX]
 
 
-def server() -> None:
+def server():
     reply = generate()
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
