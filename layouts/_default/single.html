@@ -20,7 +20,7 @@
         <div>
           <a href="email:john@pignata.com?subject={{ .Title }}">john@pignata.com</a>
         </div>
-        <div>{{ .Date.Format "Monday, January 2, 2006" }}</div>
+        <div>{{ .Date.Format "Monday, January 2, 2006" }} &mdash; <a href="https://github.com/jpignata/somanymachines/commits/master/content/{{ .File.Path }}">CHANGELOG</a></div>
       </footer>
 		</article>
 	</main>
