@@ -2,68 +2,28 @@
 title: Good Intentions on the Old-Timey Internet
 date: 2020-06-14T00:00:00-04:00
 type: post
-dek: "or, the greybeards' facilities for troubleshooting were almost
-immediately weaponized by the rabble. A look at the Character Generator Protocol
-which ended its life as an amplifier for DDoS attacks."
+dek: "or, the things the greybeards built for fun were almost immediately weaponized by the rabble. A look at the Character Generator Protocol which ended its life as an amplifier for DDoS attacks."
 ---
 
-**In May of 1983,** [Jon Postel][0] wrote a series of six Request for Comments
-or RFCs. This in itself wasn't irregular. Postel was the RFC Editor from 1969
-until his death in 1998 and co-authored over 200 during that time. In [Where
-Wizards Stay Up Late][7], Postel is introduced by his appearance: "he wore a
-bushy beard, wore sandals year round, and had never put on a tie in his life."
-He is described as an underachiever and mediocre student, and by chapter eight
-is designing TCP in a hallway of a technical conference. Among his technical
-contributions that impact you daily are the definition of TCP/IP, Domain Name
-Service (DNS), and Simple Mail Transfer Protocol (SMTP). An oft-quoted part of
-his legacy is Postel's Law: "be liberal in what you accept, and conservative in
-what you send."
+**In May of 1983,** [Jon Postel][0] wrote a series of six Request for Comments or RFCs. This in itself wasn't irregular. Postel was the RFC Editor from 1969 until his death in 1998 and co-authored over 200 during that time. In [Where Wizards Stay Up Late][7], Postel is introduced by his appearance: "he wore a bushy beard, wore sandals year round, and had never put on a tie in his life." He is described as an underachiever and mediocre student, and by chapter eight Postel is designing TCP in a hallway of a technical conference on scraps of paper. Among his technical contributions that you touch daily are the definition of TCP/IP, Domain Name Service (DNS), and Simple Mail Transfer Protocol (SMTP). An oft-quoted part of his legacy is Postel's Law: "be liberal in what you accept, and conservative in what you send."
 
 ![](/images/character-generator-protocol/jon-postel.jpg)
-<figcaption>Postel in 1994, with map of Internet top-level domains.
-(Irene Fertik, USC News Service. © 1994, USC)</figcaption>
+<figcaption>Postel in 1994, with map of Internet top-level domains. (Irene Fertik, USC News Service. © 1994, USC)</figcaption>
 
-These six Postel RFCs are of a piece. Unlike typical RFC fare, these
-documents are short – some under a page – and easily understandable.  Each
-outlines a "useful debugging and measurement tool" to allow network operators to
-test the reachability of other hosts and troubleshoot connectivity issues. They
-each allowed operators to connect to another host and receive some data to
-verify end-to-end connectivity. [Echo Protocol][2] sent you back what you sent
-it, [Quote of the Day Protocol][3] returned a small message a la `fortune`,
-[Daytime Protocol][4] printed out the current date and time - you get the idea.
-All six are now obsolete.
+These six Postel RFCs are of a piece. Unlike typical RFC fare, these documents are short – some under a page – and easily understandable. Each outlines a "useful debugging and measurement tool" to allow network operators to test the reachability of other hosts and troubleshoot connectivity issues. They each allowed operators to connect to another host and receive some data toverify end-to-end connectivity. [Echo Protocol][2] sent you back what you sent it, [Quote of the Day Protocol][3] returned a small message a la `fortune`, [Daytime Protocol][4] printed out the current date and time - you get the idea. All six are now obsolete.
 
-[RFC 864][1] defines the Character Generator Protocol which "simply sends data
-without regard to the input." This protocol existed in blissful obscurity until
-people learned that requests with a forged source address could be used to flood
-their enemies (or for lols). Today it only remains implemented and enabled on
-old printers with ancient fireware that hopefully never get accidentally
-connected to the internet.
+[RFC 864][1] defines the Character Generator Protocol which "simply sends data without regard to the input." This protocol existed in blissful obscurity until people learned that requests with a forged source address could be used to flood their enemies (or for lols). Today it only remains implemented and enabled on old printers with ancient fireware that hopefully never get accidentally connected to the internet.
 
 In this post, we'll look at chargen, its implementation, and its demise.
 
 \
-**The protocol is specified** in two flavors. The first is based on TCP and
-stream-oriented. It listens for connections on port 19 and once established will
-send a continuous stream of characters. The RFC notes that the server should be
-prepared for "the rude abort" presumably when a client receives enough
-characters and closes the connection.
+**The CHARGEN protocol is specified** in two flavors. The first is based on TCP and stream-oriented. It listens for connections on port 19 and once established will send a continuous stream of characters. The RFC notes that the server should be prepared for "the rude abort" presumably when a client receives enough characters and closes the connection.
 
-The specification doesn't directly define the characters that should be
-returned, though it does make a suggestion:
+The specification doesn't directly define the characters that should be returned, though it does make a suggestion:
 
-> One popular pattern is 72 chraracter lines of the ASCII printing
-  characters.  There are 95 printing characters in the ASCII
-  character set.  Sort the characters into an ordered sequence and
-  number the characters from 0 through 94.  Think of the sequence as
-  a ring so that character number 0 follows character number 94.  On
-  the first line (line 0) put the characters numbered 0 through 71.
-  On the next line (line 1) put the characters numbered 1 through 72.
-  And so on.  On line N, put characters (0+N mod 95) through
-  (71+N mod 95).  End each line with carriage return and line feed.
+> One popular pattern is 72 chraracter lines of the ASCII printing characters.  There are 95 printing characters in the ASCII  character set.  Sort the characters into an ordered sequence and number the characters from 0 through 94.  Think of the sequence as a ring so that character number 0 follows character number 94.  On the first line (line 0) put the characters numbered 0 through 71. On the next line (line 1) put the characters numbered 1 through 72. And so on.  On line N, put characters (0+N mod 95) through (71+N mod 95).  End each line with carriage return and line feed.
 
-This results in a [barber's pole][5] kind of pattern when animated. The RFC goes
-on to provide a sample of the suggested output starting with these eight lines:
+This results in a [barber's pole][5] kind of pattern when animated. The RFC goes on to provide a sample of the suggested output starting with these eight lines:
 
 ```console
 !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefgh
@@ -75,27 +35,20 @@ $%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijk
 '()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmn
 ()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmno
 ```
-
-In Python, this pattern can be generated by following these directions and by
-taking advantage of these characters' ordinal positions[^1]:
+This pattern can be generated by taking advantage of these characters' ordinal positions[^1]:
 
 ```python
-import sys
-
 chars = [chr(i) for i in range(32, 127)]
-line = 1
 
-while lines <= 8:
+for line in range(1, 9):
     for i in range(72):
         char = chars[(line + i) % len(chars)]
-        sys.stdout.write(char)
+        print(char, end='')
 
     print()
-
-    line += 1
 ```
 
-This passes the test of the example provided in the RFC:
+This short Python script mimics the example provided in the RFC:
 
 ```console
 $ python output.py
@@ -113,10 +66,10 @@ With the pattern generator in place, we can connect this to a tiny TCP server
 that listens on port 19 to satisfy the Character Generator Protocol
 specification.
 
-
 ```python
 import threading
 import socket
+from itertools import count
 
 CHARS = [chr(i).encode('ascii') for i in range(32, 127)]
 NEWLINE = '\r\n'.encode('ascii')
@@ -126,12 +79,10 @@ WIDTH = 72
 
 def server() -> None:
     def generate(client) -> None:
-        line = 1
-
-        while True:
+        for line in count(1):
             try:
-                for i in range(WIDTH):
-                    char = CHARS[(line + i) % len(CHARS)]
+                for column in range(WIDTH):
+                    char = CHARS[(line + column) % len(CHARS)]
                     client.send(char)
 
                 client.send(NEWLINE)
@@ -139,10 +90,7 @@ def server() -> None:
                 client.close()
                 break
 
-            line += 1
-
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, True)
     sock.bind(('', PORT))
     sock.listen()
@@ -150,18 +98,14 @@ def server() -> None:
     while True:
         client, _ = sock.accept()
         thread = threading.Thread(target=generate, args=(client,))
-
         thread.start()
 
 
 if __name__ == '__main__':
     server()
-
 ```
 
-Running this server (as `root`, given port 19 is a privileged port), we can use
-`netcat` to test its functionality against the spec. Here we see the same
-pattern from above:
+Running this server (as `root`, given port 19 is a privileged port), we can use `netcat` to test its functionality against the spec. Here we see the same pattern from above:
 
 ```console
 $ nc 127.1 19 | head -8
@@ -175,31 +119,22 @@ $%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijk
 ()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmno
 ```
 
-After eight lines, `head` will terminate and netcat will close the connection.
-Without piping to `head`, the stream will continue until interrupted:
+After eight lines, `head` will terminate and netcat will close the connection. Without piping to `head`, the stream will continue until interrupted:
 
 ![](/images/character-generator-protocol/netcat.gif)
 
 Voilà! Now we can, er, use this useful debugging and measurement tool, I guess.
-This implementation is largely safe albeit not obviously useful. Its UDP
-counterpart is not safe however. Below we'll explore how it works and how it was
-exploited.
+
+This implementation is largely safe albeit not obviously useful. Its UDP counterpart is not safe however. Below we'll explore how it works and how it was exploited.
 
 \
-**The UDP flavor of the Character Generator Protocol** is datagram-oriented.
-Like its TCP counterpart, this flavor listens on port 19 and responds with
-random data. Instead of a continuous stream of data, the specification specifies
-that the server must send an answering datagram containing a random amount of
-characters up to the length 512. The specification goes on to explain no history
-or state information is kept, so there is no continuity between one request and
-another.
+**The UDP flavor of CHARGEN** is datagram-oriented. Like its TCP counterpart, this flavor listens on port 19 and responds with random data. Instead of a continuous stream of data, the specification specifies that the server must send an answering datagram containing a random amount of characters up to the length 512. The specification goes on to explain no history or state information is kept, so there is no continuity between one request and another.
 
-This implementation is largely the same as the TCP server with some
-modifications for the protocol. Below we always return exactly 511 characters,
-including carriage returns and line feeds:
+This implementation is largely the same as the TCP server with some modifications for the protocol. This script will always return exactly 511 characters, including carriage returns and line feeds:
 
 ```python
 import socket
+from itertools import count
 
 BUFFER_SIZE = 4096
 CHARS = [chr(i).encode('ascii') for i in range(32, 127)]
@@ -211,27 +146,25 @@ WIDTH = 72
 
 def server() -> None:
     def generate() -> None:
-        line = 1
+        lines = count(1)
         reply = b''
 
         while len(reply) < MAX:
-            for i in range(WIDTH):
-                reply += CHARS[(line + i) % len(CHARS)]
+            line = next(lines)
+
+            for column in range(WIDTH):
+                reply += CHARS[(line + column) % len(CHARS)]
 
             reply += NEWLINE
-            line += 1
 
         return reply[:MAX]
 
-
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     reply = generate()
-
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind(('', PORT))
 
     while True:
         _, address = sock.recvfrom(BUFFER_SIZE)
-
         sock.sendto(reply, address)
 
 
@@ -239,8 +172,7 @@ if __name__ == '__main__':
     server()
 ```
 
-This server returns a similar pattern, though a truncated version of it. Using
-`netcat` with `-u` to send UDP datagrams, we can see the response:
+This server returns a similar pattern, though a truncated version of it. Using `netcat` with `-u` to send UDP datagrams, it returns the barber's pole:
 
 ```console
 $ echo | nc -u 127.1 19
@@ -253,24 +185,12 @@ $%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijk
 '()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghi
 ```
 
-A similar implementation with nearly identical output. What makes this
-implementation unsafe?
+A similar implementation with nearly identical output. What makes this implementation unsafe?
 
 \
-**Distributed Denial of Service attacks rely** on compromised computer systems
-as sources of traffic. In the early internet, several flaws in the early
-protocols and design of networks could be used to generate large amounts of
-traffic against targets. An early attack, smurf[^2], relied on the design of
-broadcast IP traffic and ICMP echo and echo reply to overwhelm target networks.
-In this attack, a single forged ICMP request could result in a torrent of dozens
-or hundreds of replies to a single target.
+**Distributed Denial of Service attacks rely** on compromised computer systems as sources of traffic. In the early internet, several flaws in the early protocols and design of networks could be used to generate large amounts of traffic against targets. An early attack, smurf[^2], relied on the design of broadcast IP traffic and ICMP echo and echo reply to overwhelm target networks. In this attack, a single forged ICMP request could result in a torrent of dozens or hundreds of replies to a single target.
 
-UDP is a connection-less protocol that does not validate source IP addresses.
-Thus, a receiving server that doesn't have any mechanism to authenticate the
-traffic will respond to whatever address is provided blindly. Chargen is
-especially appealing as an amplifier as a small request yields a relative large
-amount of data. In the example above, an UDP packet with a single carriage
-return yields a much larger response.
+UDP is a connection-less protocol that does not validate source IP addresses. Thus, a receiving server that doesn't have any mechanism to authenticate the traffic will respond to whatever address is provided blindly. Chargen is especially appealing as an amplifier as a small request yields a relative large amount of data. In the example above, an UDP packet with a single carriage return yields a much larger response.
 
 Using `tcpdump`, we can see the size difference:
 
@@ -319,45 +239,17 @@ tcpdump: listening on lo0, link-type NULL (BSD loopback), capture size 262144 by
         0x0210:  5f60 6162 6364 6566 6768 690d 0a         _`abcdefghi..
 ```
 
-The first packet above is the request. It weighs in at 29 bytes. A single byte
-is in the payload with 20 bytes for the IP header and 8 bytes for the UDP
-header. The response is quite a bit larger weighing in at 541 bytes. Just
-considering the payload, that's a 500x amplification factor. An attacker could
-sent a flood of traffic by spoofing the source address to be the target to a
-chargen server
+The first packet above is the request. It weighs in at 29 bytes. A single byte is in the payload with 20 bytes for the IP header and 8 bytes for the UDP header. The response is quite a bit larger weighing in at 541 bytes. Just considering the payload, that's a 500x amplification factor. An attacker could sent a flood of traffic by spoofing the source address to be the target to a CHARGEN server
 
-These vulnerabilities lasted way past the adolescence of the internet. In 2014,
-CERT published alert [TA14-017A][9] with specific guidance to network
-administrators to find and disable these services. Today, it's mostly old
-printers and weirdly implemented IoT things that still respond to this kind of
-traffic. Many routers and infrastructure providers have additional protections
-to ensure source addresses are plausible given the source of the traffic.
+These vulnerabilities lasted way past the adolescence of the internet. In 2014, CERT published alert [TA14-017A][9] with specific guidance to network administrators to find and disable these services. Today, it's mostly old printers and weirdly implemented IoT things that still respond to this kind of traffic. Many routers and infrastructure providers have additional protections to ensure source addresses are plausible given the source of the traffic.
 
 \
-**Much of the protocol** designs from this era were written assuming a walled
-garden of mostly academic users. The networks were designed to carry research,
-and later commercialized without much revision to the original assumptions.
-Postel himself seemed to buck against the expansion of the internet.  In 1998,
-months before his death, he [hijacked eight of the root DNS servers as a
-test][11]. While his motivations for this test aren't clear, it's surmised that
-he did this as a statement toward government and commercial incursions into his
-project.
+**Much of the protocol** designs from this era were written assuming a walled garden of mostly academic users. The networks were designed to carry research, and later commercialized without much revision to the original assumptions. Postel himself seemed to buck against the expansion of the internet. In 1998, months before his death, he [hijacked eight of the root DNS servers as a test][11]. While his motivations for this test aren't clear, it's surmised that he did this as a statement toward government and commercial incursions into his project.
 
-The ideals and good intentions of Postel's work and this era echo throughout the
-technical designs. The fact that you have to deal with spam is due to the fact
-that SMTP was written for a world of researchers mailing each to coordinate
-conferences or share data or math jokes or whatever, without any thought toward
-commercialization and the hoi polloi. Who cares if people can forge source
-addresses? Everybody has the best of intentions.
+The ideals and good intentions of Postel's work and this era echo throughout the technical designs. The fact that you have to deal with spam is due to the fact that SMTP was written for a world of researchers mailing each to coordinate conferences or share data or math jokes or whatever, without any thought toward commercialization and the hoi polloi. Who cares if people can forge source addresses? Everybody has the best of intentions.
 
 [^1]: Code from this post can be found in [this gist][12].
-[^2]: In researching this, I discovered the author of [smurf][8], Dan
-Moschuk, who went by the handle of TFreak, passed away suddenly at the age of 29
-in 2010. This is sad to hear – Dan and I crossed path many times during our
-misspent youth of IRC on EFNet and stolen conference calls. He was bright,
-creative, and generally a good influence on the other misfits around him. As a
-tribute, his dates of birth and death were [added to the FreeBSD calendar][10].
-This feels very fitting to me.
+[^2]: In researching this, I discovered the author of [smurf][8], Dan Moschuk, who went by the handle of TFreak, passed away suddenly at the age of 29 in 2010. This is sad to hear – Dan and I crossed path many times during our misspent youth of IRC on EFNet and stolen conference calls. He was bright, creative, and generally a good influence on the other misfits around him. As a tribute, his dates of birth and death were [added to the FreeBSD calendar][10]. A suitable ending, I think.
 
 [0]: https://en.wikipedia.org/wiki/Jon_Postel
 [1]: https://tools.ietf.org/html/rfc864
