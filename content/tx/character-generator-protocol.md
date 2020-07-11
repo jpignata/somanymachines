@@ -77,20 +77,22 @@ PORT = 19
 WIDTH = 72
 
 
+def generate(client) -> None:
+    for line in count(1):
+        try:
+            for column in range(WIDTH):
+                char = CHARS[(line + column) % len(CHARS)]
+                client.send(char)
+
+            client.send(NEWLINE)
+        except Exception:
+            client.close()
+            break
+
+
 def server() -> None:
-    def generate(client) -> None:
-        for line in count(1):
-            try:
-                for column in range(WIDTH):
-                    char = CHARS[(line + column) % len(CHARS)]
-                    client.send(char)
-
-                client.send(NEWLINE)
-            except Exception:
-                client.close()
-                break
-
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, True)
     sock.bind(('', PORT))
     sock.listen()
@@ -98,6 +100,7 @@ def server() -> None:
     while True:
         client, _ = sock.accept()
         thread = threading.Thread(target=generate, args=(client,))
+
         thread.start()
 
 
@@ -144,27 +147,30 @@ PORT = 19
 WIDTH = 72
 
 
+def generate() -> None:
+    lines = count(1)
+    reply = b''
+
+    while len(reply) < MAX:
+        line = next(lines)
+
+        for column in range(WIDTH):
+            reply += CHARS[(line + column) % len(CHARS)]
+
+        reply += NEWLINE
+
+    return reply[:MAX]
+
+
 def server() -> None:
-    def generate() -> None:
-        lines = count(1)
-        reply = b''
-
-        while len(reply) < MAX:
-            line = next(lines)
-
-            for column in range(WIDTH):
-                reply += CHARS[(line + column) % len(CHARS)]
-
-            reply += NEWLINE
-
-        return reply[:MAX]
-
     reply = generate()
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
     sock.bind(('', PORT))
 
     while True:
         _, address = sock.recvfrom(BUFFER_SIZE)
+
         sock.sendto(reply, address)
 
 
