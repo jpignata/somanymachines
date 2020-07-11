@@ -14,7 +14,7 @@ These six Postel RFCs are of a piece. Unlike typical RFC fare, these documents a
 
 [RFC 864][1] defines the Character Generator Protocol which "simply sends data without regard to the input." This protocol existed in blissful obscurity until people learned that requests with a forged source address could be used to flood their enemies (or for lols). Today it only remains implemented and enabled on old printers with ancient fireware that hopefully never get accidentally connected to the internet.
 
-In this post, we'll look at chargen, its implementation, and its demise.
+In this post, we'll look at CHARGEN, its implementation, and its demise.
 
 \
 **The CHARGEN protocol is specified** in two flavors. The first is based on TCP and stream-oriented. It listens for connections on port 19 and once established will send a continuous stream of characters. The RFC notes that the server should be prepared for "the rude abort" presumably when a client receives enough characters and closes the connection.
@@ -196,7 +196,7 @@ A similar implementation with nearly identical output. What makes this implement
 \
 **Distributed Denial of Service attacks rely** on compromised computer systems as sources of traffic. In the early internet, several flaws in the early protocols and design of networks could be used to generate large amounts of traffic against targets. An early attack, smurf[^2], relied on the design of broadcast IP traffic and ICMP echo and echo reply to overwhelm target networks. In this attack, a single forged ICMP request could result in a torrent of dozens or hundreds of replies to a single target.
 
-UDP is a connection-less protocol that does not validate source IP addresses. Thus, a receiving server that doesn't have any mechanism to authenticate the traffic will respond to whatever address is provided blindly. Chargen is especially appealing as an amplifier as a small request yields a relative large amount of data. In the example above, an UDP packet with a single carriage return yields a much larger response.
+UDP is a connection-less protocol that does not validate source IP addresses. Thus, a receiving server that doesn't have any mechanism to authenticate the traffic will respond to whatever address is provided blindly. CHARGEN is especially appealing as an amplifier as a small request yields a relative large amount of data. In the example above, an UDP packet with a single carriage return yields a much larger response.
 
 Using `tcpdump`, we can see the size difference:
 
